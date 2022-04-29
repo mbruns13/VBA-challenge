@@ -35,7 +35,7 @@ Sub Stocks():
     LastRow = Cells(Rows.Count, 1).End(xlUp).Row
  
     'loop through all stocks for one year and outputs:
-    For i = 2 To 753001
+    For i = 2 To LastRow
         'if the next row's ticker name does not match the current row's
         If Cells(i + 1, 1).Value <> Cells(i, 1).Value Then
             'set ticker variable to match that of the current row's
@@ -70,7 +70,7 @@ Sub Stocks():
     Next i
     
     'loop through summary table to color code yearly change column
-    For i = 2 To 753001
+    For i = 2 To LastRow
         'if cells contain positive value/increase
         If Cells(i, 10).Value > 0 Then
             'make cells green
